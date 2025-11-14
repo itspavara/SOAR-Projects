@@ -1,4 +1,4 @@
-# SOAR Project 2.0 – AI-Driven Alert Triage, Enrichment & Automated Response
+# SOC Aotomation with n8n – AI-Driven Alert Triage, Enrichment & Automated Response
 
 This repository contains a fully functional Security Orchestration, Automation & Response (SOAR) pipeline built using Splunk, Splunk Universal Forwarder, n8n, Slack, and GPT-powered alert analysis.
 
