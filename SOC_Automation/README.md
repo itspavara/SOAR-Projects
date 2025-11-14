@@ -1,4 +1,4 @@
-# SOC Automation with n8n – AI-Driven Alert Triage, Enrichment & Automated Response
+# SOAR Project 2.0 – AI-Driven Alert Triage, Enrichment & Automated Response
 
 This repository contains a fully functional Security Orchestration, Automation & Response (SOAR) pipeline built using Splunk, Splunk Universal Forwarder, n8n, Slack, and GPT-powered alert analysis.
 
@@ -9,6 +9,8 @@ The project automates Tier 1 SOC operations including:
 - Automated escalation via Slack
 
 The purpose is to demonstrate how SOAR can replace repetitive manual work with scalable, automated processes while keeping analysts focused on real threats.
+
+![SOAR Pipeline Overview](./screenshots/n8n-workflow.png)
 
 ---
 
@@ -57,6 +59,7 @@ Splunk Alert Action
                 └──→ Slack Notification
 ```
 
+
 ---
 
 ## 🛠️ Tech Stack
@@ -80,7 +83,7 @@ Splunk Alert Action
 Forward Windows Security logs:
 
 ```ini
-﻿[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+[WinEventLog://Microsoft-Windows-Sysmon/Operational]
 index = my-project
 disabled = false
 renderXml = true
@@ -113,12 +116,13 @@ disabled = false
 [WinEventLog://Microsoft-Windows-TerminalServices-LocalSessionManager/Operational]
 index = my-project
 disabled = false
-
 ```
 
 ### 2. Splunk Alert Setup
 
 Create a detection rule → configure it to call the n8n webhook.
+
+![Splunk Alert Configuration](./screenshots/splunk-alert-config.png)
 
 ---
 
@@ -147,6 +151,12 @@ Feeds the alert + enrichment into your custom Tier 1 prompt.
 - Summary
 - MITRE mapping
 - Recommendations
+
+---
+
+## 🔄 n8n Workflow Visual
+
+![n8n Workflow](./screenshots/n8n-workflow.png)
 
 ---
 
@@ -202,8 +212,10 @@ Recommended Actions:
 3. Ensure account lockout policies are in place to mitigate brute force attempts.
 4. Monitor other network devices for similar activity.
 5. If the source is found to be malicious or compromised, isolate the device and perform a thorough malware/compromise assessment.
-6. Educate users on strong password practices and enforce multi-factor authentication if not already implemented. 
+6. Educate users on strong password practices and enforce multi-factor authentication if not already implemented.  
 ```
+
+![Slack Alert Example](./screenshots/slack-alert.png)
 
 ---
 
@@ -218,12 +230,37 @@ Recommended Actions:
 
 ## 🚀 Getting Started
 
+### Prerequisites
+- Splunk Enterprise or Free version
+- Windows 10/11 VM for log generation
+- n8n instance (self-hosted or cloud)
+- AbuseIPDB API key
+- OpenAI API key
+- Slack workspace with webhook access
+
+### Installation Steps
+
 1. **Set up Splunk Universal Forwarder** on Windows VM
 2. **Configure Splunk** indexer and detection rules
 3. **Deploy n8n** workflow and configure webhook endpoint
 4. **Set up API keys** for AbuseIPDB and GPT
 5. **Configure Slack** webhook for notifications
 6. **Test the pipeline** with sample security events
+
+### Screenshots Directory Structure
+
+```
+SOC_Automation/
+├── README.md
+├── screenshots/
+│   ├── input-configrations.png
+│   ├── alert-formating.png
+│   ├── splunk-alert-config.png
+│   ├── n8n-workflow.png
+│   └── slack-alert.png
+└── workflows/
+    └── n8n-soar-workflow.json
+```
 
 ---
 
@@ -232,7 +269,3 @@ Recommended Actions:
 This project is available for educational and research purposes.
 
 ---
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
