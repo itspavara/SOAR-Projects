@@ -10,7 +10,7 @@ The project automates Tier 1 SOC operations including:
 
 The purpose is to demonstrate how SOAR can replace repetitive manual work with scalable, automated processes while keeping analysts focused on real threats.
 
-![SOAR Pipeline Overview](./screenshots/n8n-workflow.png)
+![SOAR Pipeline Overview](./SOC_Automation/screenshots/n8n-workflow.pn)
 
 ---
 
@@ -122,7 +122,7 @@ disabled = false
 
 Create a detection rule → configure it to call the n8n webhook.
 
-![Splunk Alert Configuration](./screenshots/splunk-alert-config.png)
+![Splunk Alert Configuration](./SOC_Automation/screenshots/splunk-alert-config.png)
 
 ---
 
@@ -156,7 +156,7 @@ Feeds the alert + enrichment into your custom Tier 1 prompt.
 
 ## 🔄 n8n Workflow Visual
 
-![n8n Workflow](./screenshots/n8n-workflow.png)
+![n8n Workflow](./SOC_Automation/screenshots/n8n-workflow.png)
 
 ---
 
@@ -215,7 +215,7 @@ Recommended Actions:
 6. Educate users on strong password practices and enforce multi-factor authentication if not already implemented.  
 ```
 
-![Slack Alert Example](./screenshots/slack-alert.png)
+![Slack Alert Example](./SOC_Automation/screenshots/slack-alert.png)
 
 ---
 
